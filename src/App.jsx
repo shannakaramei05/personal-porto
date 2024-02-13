@@ -7,7 +7,7 @@ import Hero from "./component/Hero.jsx";
 
 function App() {
   return (
-    <div className="bg-primary">
+    <div>
         <Navbar></Navbar>
         <Hero/>
         {/*<Header/>*/}
