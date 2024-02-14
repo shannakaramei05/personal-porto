@@ -1,12 +1,12 @@
-# React + Vite
+# Portofolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-> Creating using Vite + React 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
-Slicing from :
+Slicing Idea from :
 https://www.figma.com/file/igYAFBjTaUAGI8zbsmnsTv/Portfolio-Web-Template-(Community)?type=design&node-id=0-1&mode=design&t=jGnqEGpT7vmzmtNw-0
+
+# Developing FrontEnd is Killing me softly,.. 
+
+
+# Deployment 
+live : https://personal-porto-silk.vercel.app/
