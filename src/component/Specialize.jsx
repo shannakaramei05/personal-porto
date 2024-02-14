@@ -21,17 +21,20 @@ const talent = [
 ];
 const Specialize = () => {
     return <>
-        <section>
-            <div className="flex">
-                {talent.map((item,index)=> (
-                        <Card
-                            key={index}
-                            icon={item.icon}
-                            title={item.title}
-                            desc={item.desc}
-                        />
-                    )
-                )}
+        <section className="mt-24 px-6 lg:px-0">
+            <div className="container mx-auto">
+                <h2 className="text-3xl font-bold text-center mb-12">Specialize</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {talent.map((item, index) => (
+                        <div key={index} className="flex flex-col h-full">
+                            <Card
+                                icon={item.icon}
+                                title={item.title}
+                                desc={item.desc}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     </>
