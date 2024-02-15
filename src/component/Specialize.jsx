@@ -23,7 +23,7 @@ const Specialize = () => {
     return <>
         <section className="mt-24 px-6 lg:px-0">
             <div className="container mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-12">Specialize</h2>
+                <h2 className="text-3xl font-bold text-center mb-12">Specialized in</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {talent.map((item, index) => (
                         <div key={index} className="flex flex-col h-full">
