@@ -6,6 +6,7 @@ import Navbar from "./component/Navbar.jsx";
 import Hero from "./component/Hero.jsx";
 import Specialize from "./component/Specialize.jsx";
 import WorkExperience from "./component/WorkExperience.jsx";
+import PersonalProject from "./component/PersonalProject.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Hero/>
         <WorkExperience/>
         <Specialize/>
+        <PersonalProject/>
         {/*<Footer/>*/}
     </div>
   )

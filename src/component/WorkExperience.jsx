@@ -1,7 +1,7 @@
 const WorkExperience = () => {
     return (
-        <section className="container mx-auto max-w-3xl px-6 lg:px-0 mt-12 py-8 md:px-12 ">
-            <h3 className="text-3xl font-bold text-center mb-12">Work Experiences</h3>
+        <section className="container mx-auto max-w-3xl px-6 lg:px-0 mt-8 py-8 md:px-12">
+            <h3 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white text-center m-4">Work Experiences</h3>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
                 <div className="w-full max-w-md">
                     <div className="text-justify mb-4">

@@ -14,10 +14,10 @@ const Hero = () => {
                         Enthusiastic about technology and a fast learner.
                     </p>
                     <div className="flex items-center justify-center lg:justify-start mt-6 space-x-6">
-                        <div><SlSocialInstagram size={25} /></div>
-                        <div><SlSocialGithub size={25} /></div>
-                        <div><SlSocialTwitter size={25} /></div>
-                        <div><SlSocialLinkedin size={25} /></div>
+                        <div><a href="https://www.instagram.com/rahmatcristoper/" target="_blank"><SlSocialInstagram size={25} /></a></div>
+                        <div><a href="https://github.com/shannakaramei05" target="_blank"><SlSocialGithub size={25} /></a></div>
+                        <div><a href="https://twitter.com/agreatliar_" target="_blank"><SlSocialTwitter size={25} /></a></div>
+                        <div><a href="https://www.linkedin.com/in/rahmatsinambela/" target="_blank"><SlSocialLinkedin size={25} /></a></div>
                     </div>
                 </div>
                 <div className="mt-12 lg:mt-0">
