@@ -3,7 +3,7 @@ const NavLink = ({ href, children }) => {
     return (
         <a
             href={href}
-            className="text-white hover:text-gray-200 px-4 py-2 transition-colors duration-300"
+            className="text-black hover:text-gray-200 px-4 py-2 transition-colors duration-300"
         >
             {children}
         </a>

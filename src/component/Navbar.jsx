@@ -1,14 +1,12 @@
-import { MdDarkMode } from "react-icons/md";
 import NavLink from "../route/NavLink.jsx";
-import logo from "../assets/react.svg";
 
 const Navbar = () => {
     return (
-        <nav className="bg-primary">
-            <div className="container mx-auto px-6 lg:px-8 py-4 text-white">
+        <nav className="shadow-md">
+            <div className="container mx-auto px-6 lg:px-8 py-4 text-black">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <img className="h-8" src={logo} alt="logo" />
+                    <h1 className="flex items-center font-bold text-xl md:text-2xl">rahmatcristoper</h1>
 
                     {/* Navigation Links */}
                     <div className="hidden lg:flex flex-grow justify-center">
@@ -29,12 +27,7 @@ const Navbar = () => {
 
                     {/* Right Side Content */}
                     <div className="hidden lg:flex items-center">
-                        {/* Dark Mode Button */}
-                        <div className="mr-6">
-                            <MdDarkMode />
-                        </div>
-                        {/* Resume Button */}
-                        <button className="btn-primary">Resume</button>
+                        <button className="px-4 py-2 bg-black text-white rounded-full hover:bg-blue-500">Download Resume</button>
                     </div>
                 </div>
             </div>

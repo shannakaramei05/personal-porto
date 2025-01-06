@@ -3,7 +3,7 @@ import { SlSocialGithub, SlSocialTwitter, SlSocialLinkedin, SlSocialInstagram } 
 
 const Hero = () => {
     return (
-        <section className="container mx-auto max-w-3xl px-6 lg:px-0 mt-24">
+        <section className="container mx-auto h-screen max-w-3xl px-6 lg:px-0 mt-24">
             <div className="flex flex-col lg:flex-row gap-16 items-center">
                 <div className="text-center lg:text-left">
                     <div className="uppercase tracking-widest text-gray-400">- My Name Is</div>
