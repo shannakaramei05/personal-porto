@@ -1,41 +1,35 @@
-import { MdDarkMode } from "react-icons/md";
-import NavLink from "../route/NavLink.jsx";
-import logo from "../assets/react.svg";
+import {useState} from "react";
+import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 
 const Navbar = () => {
+
+    const [nav, setNav] = useState(false);
+
+    const handleNav = () => {
+        setNav(!nav)
+    }
+
     return (
-        <nav className="bg-primary">
-            <div className="container mx-auto px-6 lg:px-8 py-4 text-white">
-                <div className="flex justify-between items-center">
-                    {/* Logo */}
-                    <img className="h-8" src={logo} alt="logo" />
-
-                    {/* Navigation Links */}
-                    <div className="hidden lg:flex flex-grow justify-center">
-                        <NavLink href="#">Services</NavLink>
-                        <NavLink href="#">Portfolio</NavLink>
-                        <NavLink href="#">Experience</NavLink>
-                        <NavLink href="#">Blog</NavLink>
-                    </div>
-
-                    {/* Hamburger Menu for Small Screens */}
-                    <div className="lg:hidden">
-                        <button className="flex items-center text-white focus:outline-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    {/* Right Side Content */}
-                    <div className="hidden lg:flex items-center">
-                        {/* Dark Mode Button */}
-                        <div className="mr-6">
-                            <MdDarkMode />
-                        </div>
-                        {/* Resume Button */}
-                        <button className="btn-primary">Resume</button>
-                    </div>
+        <nav className="bg-primary text-white">
+            <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4">
+                <h1 className="w-full text-3xl font-bold uppercase">Rahmat C S</h1>
+                <ul className="hidden md:flex gap-4">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Portfolio</li>
+                </ul>
+                <div onClick={handleNav} className="block md:hidden">
+                    {!nav ?  <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
+                </div>
+                <div className={!nav ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-primary" : "fixed left-[-100%]"}>
+                    <h1 className="w-full text-3xl font-bold uppercase text-white m-4">Rahmat C S</h1>
+                    <ul className="uppercase">
+                        <li className="p-4 border-b border-gray-600">Home</li>
+                        <li className="p-4 border-b border-gray-600">About</li>
+                        <li className="p-4 border-b border-gray-600">Services</li>
+                        <li className="p-4 border-b border-gray-600">Portfolio</li>
+                    </ul>
                 </div>
             </div>
         </nav>
