@@ -1,23 +1,28 @@
 import {useState} from "react";
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
+import {Link} from "react-router-dom";
 
 const Navbar = () => {
 
-    const [nav, setNav] = useState(false);
+    const [nav, setNav] = useState(true);
 
     const handleNav = () => {
         setNav(!nav)
     }
+
+    const scrollToSection = (id) => {
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <nav className="bg-primary text-white">
             <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4">
                 <h1 className="w-full text-3xl font-bold uppercase">Rahmat C S</h1>
                 <ul className="hidden md:flex gap-4">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Portfolio</li>
+                    <li><button onClick={() => scrollToSection("about")} className="hover:text-gray-400">Home</button></li>
+                    <li><button onClick={() => scrollToSection("about")} className="hover:text-gray-400">About</button></li>
+                    <li><button onClick={() => scrollToSection("skills")} className="hover:text-gray-400">Services</button></li>
+                    <li><button onClick={() => scrollToSection("portfolio")} className="hover:text-gray-400">Portfolio</button></li>
                 </ul>
                 <div onClick={handleNav} className="block md:hidden">
                     {!nav ?  <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
