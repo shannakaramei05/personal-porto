@@ -1,42 +1,132 @@
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { Calendar, MapPin, Briefcase } from 'lucide-react';
+
 const WorkExperience = () => {
-    return (
-        <section className="container mx-auto max-w-3xl px-6 lg:px-0 mt-8 py-8 md:px-12">
-            <h3 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white text-center m-4">Work Experiences</h3>
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                <div className="w-full max-w-md">
-                    <div className="text-justify mb-4">
-                        <h3 className="font-semibold text-xl">FullStack Engineer</h3>
-                        <p className="text-sm"><a target="_blank" href="https://www.hanabank.co.id/">Hana Bank Indonesia</a></p>
-                        <p className="text-xs">Semanggi, South Jakarta</p>
-                        <p className="text-xs">May 2022 - Present | Full-time</p>
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+
+  const experiences = [
+    {
+      company: 'PT KEB Hana Bank Indonesia',
+      position: 'Full-Stack Engineer',
+      location: 'South Jakarta',
+      period: 'May 2022 – Present',
+      description: [
+        'Developed and maintained web applications for transactions',
+        'Created and managed RESTful APIs for frontend-backend communication',
+        'Collaborated with teams to gather requirements and deliver software solutions',
+        'Conducted testing to ensure all features function correctly and meet quality standards',
+        'Assisted in application deployment and migration',
+        'Performed tracing and troubleshooting to resolve errors in productions',
+        'Handling server incidents promptly and efficiently'
+      ],
+      technologies: ['Java', 'Spring Boot', 'Spring Framework', 'REST API', 'SQL']
+    },
+    {
+      company: 'Badan Pusat Statistik Dairi',
+      position: 'Intern',
+      location: 'Remote',
+      period: 'July 2020 – August 2020',
+      description: [
+        'Forecasted production for next year in the agricultural sector',
+        'Created report and insight based on data',
+        'Researched alternative methods for forecasting'
+      ],
+      technologies: ['Data Analysis', 'Statistical Computing', 'Forecasting']
+    }
+  ];
+
+  return (
+    <section id="experience" className="section-padding bg-gray-50 dark:bg-dark-800">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        className="container mx-auto max-w-4xl"
+      >
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ y: 30, opacity: 0 }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Work Experience
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={inView ? { width: 100 } : { width: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"
+          />
+        </div>
+
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ x: -50, opacity: 0 }}
+              animate={inView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
+              transition={{ delay: 0.3 + index * 0.2 }}
+              className="relative"
+            >
+              <div className="bg-white dark:bg-dark-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Briefcase className="text-primary-500" size={20} />
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                        {exp.company}
+                      </h3>
                     </div>
-                    <div className="flex justify-start gap-2 mb-4">
-                        <button
-                            type="button"
-                            className="inline-block rounded border border-neutral-800 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-800 transition duration-150 ease-in-out hover:border-neutral-800 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-800 focus:border-neutral-800 focus:text-neutral-800 focus:outline-none focus:ring-0 active:border-neutral-900 active:text-neutral-900 dark:border-neutral-900 dark:text-neutral-900 dark:hover:border-neutral-900 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10 dark:hover:text-neutral-900 dark:focus:border-neutral-900 dark:focus:text-neutral-900 dark:active:border-neutral-900 dark:active:text-neutral-900"
-                        >
-                            Java Spring boot
-                        </button>
-                        <button
-                            type="button"
-                            className="inline-block rounded border border-neutral-800 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-800 transition duration-150 ease-in-out hover:border-neutral-800 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-800 focus:border-neutral-800 focus:text-neutral-800 focus:outline-none focus:ring-0 active:border-neutral-900 active:text-neutral-900 dark:border-neutral-900 dark:text-neutral-900 dark:hover:border-neutral-900 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10 dark:hover:text-neutral-900 dark:focus:border-neutral-900 dark:focus:text-neutral-900 dark:active:border-neutral-900 dark:active:text-neutral-900"
-                        >
-                            React Js
-                        </button>
+                    <h4 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-3">
+                      {exp.position}
+                    </h4>
+                  </div>
+                  <div className="flex flex-col lg:items-end space-y-2">
+                    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                      <Calendar size={16} />
+                      <span className="text-sm">{exp.period}</span>
                     </div>
-                    <hr className="my-4" />
-                    <div>
-                        <ol className="list-decimal pl-4">
-                            <li className="mb-2">Design and implement backend services using Spring boot and Oracle</li>
-                            <li className="mb-2">Design and overall architecture of web applications</li>
-                            <li className="mb-2">Integration front end and back end to other systems</li>
-                            <li className="mb-2">Develop web based applications</li>
-                        </ol>
+                    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                      <MapPin size={16} />
+                      <span className="text-sm">{exp.location}</span>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </section>
-    )
-}
+
+                <ul className="space-y-3 mb-6">
+                  {exp.description.map((item, i) => (
+                    <motion.li
+                      key={i}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={inView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                      transition={{ delay: 0.5 + i * 0.1 }}
+                      className="flex items-start space-x-3 text-gray-700 dark:text-gray-300"
+                    >
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2">
+                  {exp.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
 
 export default WorkExperience;
